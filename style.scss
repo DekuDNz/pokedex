@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+.circle {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 200px;
+
+  #press {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: white;
+    top: 100px;
+  }
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity linear 0.2s;
+  .overlay-close {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .dex {
+    width: 50%;
+    display: flex;
+    height: 450px;
+
+    .dex-A {
+      width: 40%;
+      background-image: url("https://r1.ilikewallpaper.net/iphone-12-pro-max-wallpapers/download-142173/smoochum-hd.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .dex-B {
+      width: 60%;
+      background-color: #c33131;
+      border-radius: 0 5px 5px 0;
+      margin-left: 1px;
+      position: relative;
+
+      .dex-B1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+
+        .dexBoximage {
+          width: 80%;
+          background-color: white;
+          height: 170px;
+          border-radius: 5px;
+          margin-top: 150px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .dex-B2 {
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          padding-top: 50px;
+          gap: 30px;
+          li {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      .iconCircle {
+        position: absolute;
+        top: 30px;
+        right: 38px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #7c98c0;
+      }
+      .btnleft {
+        border-radius: 20px 0 0 20px;
+        padding: 10px;
+        position: absolute;
+        background-color: white;
+        top: 50px;
+        left: 40px;
+      }
+      .btnright {
+        position: absolute;
+        background-color: white;
+        top: 50px;
+        left: 100px;
+        padding: 10px;
+        border-radius: 0 20px 20px 0;
+      }
+    }
+  }
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.container:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.iconCircle::before,
+.iconCircle::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #7c98c0;
+  border-radius: 50%;
+  z-index: 100;
+  opacity: 0.7;
+}
+.iconCircle::before {
+  animation: pulse 2s ease-out infinite;
+}
+.iconCircle::after {
+  animation: pulse 2s 1s ease-out infinite;
+}
+@keyframes pulse {
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
